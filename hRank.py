@@ -65,3 +65,48 @@ if __name__ == '__main__':
 
 # -------------------------------------
 
+
+L = []
+for i in range(int(input())):
+    j = input().split()
+    if j[0] == 'insert':
+        L.insert(int(j[1]), int(j[2]))
+    if j[0] == 'print':
+        print(L)
+    elif j[0] == 'remove':
+        L.remove(int(j[1]))
+    elif j[0] == 'append':
+        L.append(int(j[1]))
+    elif j[0] == 'sort':
+        L.sort()
+    elif j[0] == 'pop':
+        L.pop()
+    elif j[0] == 'reverse':
+        L.reverse()
+
+#coments:
+n = input()
+l = []
+for _ in range(n):
+    s = raw_input().split()
+    cmd = s[0]
+    args = s[1:]
+    if cmd !="print":
+        cmd += "("+ ",".join(args) +")"
+        eval("l."+cmd)
+    else:
+        print l
+
+eval('arr.{0}{1}'.format(cmd,tuple(map(int,arg))))
+
+#instead of 
+
+cmd += "("+ ",".join(args) +")"
+    eval("l."+cmd)
+            #and  It works
+
+# -------------------------------------
+
+
+
+            
