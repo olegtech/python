@@ -108,5 +108,18 @@ cmd += "("+ ",".join(args) +")"
 # -------------------------------------
 
 
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = tuple(map(int, input().split()))
+    print(hash(integer_list))
 
-            
+# comment
+raw_input()
+print hash(tuple(map(int, raw_input().strip().split(" "))))
+
+
+print raw_input() == 0 or hash(tuple(map(int, raw_input().split(' '))))
+
+# -------------------------------------
+
+
