@@ -123,3 +123,7 @@ print raw_input() == 0 or hash(tuple(map(int, raw_input().split(' '))))
 # -------------------------------------
 
 
+first_name = input()
+last_name = input()
+print(f"Hello {first_name} {last_name}! You just delved into python.")
+
