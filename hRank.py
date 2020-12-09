@@ -127,3 +127,30 @@ first_name = input()
 last_name = input()
 print(f"Hello {first_name} {last_name}! You just delved into python.")
 
+# -------------------------------------
+
+# Mutations
+
+def mutate_string(string, position, character):
+    l = list(string)
+    l[position] = character
+    string = ''.join(l)
+    return string
+
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+
+# -------------------------------------    
+
+# String Validators
+
+if __name__ == '__main__':
+    s = input()
+    print(any(i.isalnum() for i in s))
+    print(any(i.isalpha() for i in s))
+    print(any(i.isdigit() for i in s))
+    print(any(i.islower() for i in s))
+    print(any(i.isupper() for i in s))
