@@ -154,3 +154,20 @@ if __name__ == '__main__':
     print(any(i.isdigit() for i in s))
     print(any(i.islower() for i in s))
     print(any(i.isupper() for i in s))
+
+
+# -------------------------------------
+
+# String Formatting:
+
+def print_formatted(number):
+    width = len("{0:b}".format(n))
+    for i in range(1, n+1):
+        print ("{0:{w}d} {0:{w}o} {0:{w}X} {0:{w}b}".format(i, w=width))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+
+
+# -------------------------------------
