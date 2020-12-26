@@ -171,3 +171,70 @@ if __name__ == '__main__':
 
 
 # -------------------------------------
+
+
+# collections.Counter()
+
+
+import collections
+
+numShoes = int(raw_input())
+shoes = collections.Counter(map(int, raw_input().split()))
+numCust = int(raw_input())
+
+income = 0
+
+for i in range(numCust):
+    size, price = map(int, raw_input().split())
+    if shoes[size]: 
+        income += price
+        shoes[size] -= 1
+
+print income
+
+# -------------------------------------
+
+from collections import Counter
+n = int(input())
+s = Counter(map(int,input().split()))
+x = int(input())
+total = []
+for i in range(x):
+    a,b = map(int,input().split())
+    if s[a] > 0:
+        total.append(b)
+        s.subtract(Counter([a]))
+    else:
+        pass
+
+print (sum(total))
+
+
+
+# -------------------------------------
+# -------------------------------------
+# -------------------------------------
+
+#Alphabet Rangoli
+
+import string
+alpha = string.ascii_lowercase
+
+n = int(input())
+L = []
+for i in range(n):
+    s = "-".join(alpha[i:n])
+    L.append((s[::-1]+s[1:]).center(4*n-3, "-"))
+print('\n'.join(L[:0:-1]+L))
+
+
+
+def print_rangoli(size):
+    myStr = 'abcdefghijklmnopqrstuvwxyz'[0:size]
+    
+    for i in range(size-1, -size, -1):
+        x = abs(i)
+        if x >= 0:
+            line = myStr[size:x:-1]+myStr[x:size]
+            print ("--"*x+ '-'.join(line)+"--"*x)
+
