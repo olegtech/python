@@ -212,6 +212,59 @@ print (sum(total))
 
 
 # -------------------------------------
+
+
+from collections import Counter
+
+numShoes = int(input())
+shoes = Counter(map(int,input().split()))
+numCust = int(input())
+
+total = 0
+
+for i in range(numCust):
+    size, price = map(int, input().split())
+    if shoes[size]: 
+        total += price
+        shoes[size] -= 1
+
+print (total)
+
+# comment
+from collections import Counter
+n = int(input())
+s = Counter(map(int,input().split()))
+x = int(input())
+total = []
+for i in range(x):
+    a,b = map(int,input().split())
+    if s[a] > 0:
+        total.append(b)
+        s.subtract(Counter([a]))
+    else:
+        pass
+
+print (sum(total))
+
+###
+import collections
+
+numShoes = int(raw_input())
+shoes = collections.Counter(map(int, raw_input().split()))
+numCust = int(raw_input())
+
+income = 0
+
+for i in range(numCust):
+    size, price = map(int, raw_input().split())
+    if shoes[size]: 
+        income += price
+        shoes[size] -= 1
+
+print income
+# in Python 0 == False, so if shoes[size] is 0 this will evaluate to False otherwise it will be True.
+
+
 # -------------------------------------
 # -------------------------------------
 
